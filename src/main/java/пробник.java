@@ -6,5 +6,6 @@ public class пробник {
         char last = city.lastSymbol("ЕкатеринбургГ");
         System.out.println(last);
 
+
     }
 }
