@@ -36,7 +36,7 @@ public class Main {
             }
             String line = scanner.nextLine();
             if (line.trim().equalsIgnoreCase(EXIT_COMMAND)) {
-                out.println("Пока! Спасибо за игру.");
+                out.println("Пока! Спасибо за игру!");
                 break;
             }
             out.println(session.handleMessage(line));
