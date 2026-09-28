@@ -3,7 +3,7 @@ package game;
 public class LetterUtils {
 
     public char lastSymbol(String city){
-        if(city == null || city.isEmpty())
+        if(city == null || city.trim().isEmpty())
             throw new IllegalArgumentException("Город не может быть пустой строкой");
         city = city.trim();
         city = city.toLowerCase();
