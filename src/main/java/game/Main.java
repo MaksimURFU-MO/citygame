@@ -42,7 +42,7 @@ public class Main {
             out.println(session.handleMessage(line));
         }
 
-        resultWriter.writeResult(session.getState().getHistory());
+        resultWriter.writeResult(session.getState().getSessionLog());
         scanner.close();
     }
 }
