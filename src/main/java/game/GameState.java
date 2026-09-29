@@ -3,6 +3,7 @@ import java.util.*;
 
 public class GameState {
     private final  List<String> history = new ArrayList<>();
+    private final List<String> sessionLog = new ArrayList<>();
     private final Set<String> usedCitiesLowerCase = new HashSet<>();
     private char expectedLetter;
     private boolean started = false;
@@ -32,7 +33,12 @@ public class GameState {
 
     public void addCity(String city) {
         history.add(city);
+        sessionLog.add(city);
         usedCitiesLowerCase.add(city.trim().toLowerCase());
+    }
+
+    public List<String> getSessionLog() {
+        return List.copyOf(sessionLog);
     }
 
     public boolean isUsed(String city) {
