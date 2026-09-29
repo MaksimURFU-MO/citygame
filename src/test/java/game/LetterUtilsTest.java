@@ -37,7 +37,6 @@ class LetterUtilsTest {
 
     @Test
     void letterY_isSkipped() {
-        // "Гай" - реальный город в Оренбургской области
         assertEquals('а', letterUtils.lastSymbol("Гай"));
     }
 
@@ -79,12 +78,6 @@ class LetterUtilsTest {
         assertThrows(IllegalArgumentException.class, () -> letterUtils.lastSymbol(""));
     }
 
-    // ВНИМАНИЕ: этот тест сейчас УПАДЁТ - он нашёл настоящую ошибку в LetterUtils.
-    // Строка из одних пробелов проходит проверку isEmpty(), но после trim() становится
-    // пустой, и charAt(-1) выбрасывает StringIndexOutOfBoundsException вместо
-    // IllegalArgumentException.
-    // Исправление в LetterUtils: заменить проверку в начале метода на
-    //     if (city == null || city.trim().isEmpty())
     @Test
     void onlySpaces_throwsIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> letterUtils.lastSymbol("   "));
