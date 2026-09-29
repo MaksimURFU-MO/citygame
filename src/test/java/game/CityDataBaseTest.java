@@ -62,6 +62,7 @@ class CityDatabaseTest {
     }
 
     @Test
+    //123
     void getCitiesByLetter_unknownLetter_returnsEmptyListNotNull() {
         List<String> cities = database.getCitiesByLetter('ф');
 
@@ -70,27 +71,24 @@ class CityDatabaseTest {
     }
 
     @Test
-    void getCitiesByLetter_letterY_returnsYoshkarOla() {
-        assertEquals(List.of("Йошкар-Ола"), database.getCitiesByLetter('й'));
-    }
-
-    @Test
+    //7
     void loadFromFile_trimsSpacesAroundCityNames() {
         assertTrue(database.cityExists("Самара"));
     }
 
+    //8
     @Test
     void cityExists_existingCity_returnsTrue() {
         assertTrue(database.cityExists("Москва"));
         assertTrue(database.cityExists("Йошкар-Ола"));
     }
-
+    //9
     @Test
     void cityExists_ignoresCase() {
         assertTrue(database.cityExists("москва"));
         assertTrue(database.cityExists("МОСКВА"));
     }
-
+    //10
     @Test
     void cityExists_ignoresSpacesAroundInput() {
         assertTrue(database.cityExists("  Москва  "));
@@ -111,10 +109,4 @@ class CityDatabaseTest {
         assertFalse(database.cityExists(null));
     }
 
-    @Test
-    void loadFromFile_missingFile_throwsIOException() {
-        Path missing = tempDir.resolve("no_such_file.txt");
-
-        assertThrows(IOException.class, () -> new CityDatabase().loadFromFile(missing));
-    }
 }

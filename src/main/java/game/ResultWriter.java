@@ -13,6 +13,7 @@ public class ResultWriter {
     public void writeResult(List<String> history) throws IOException {
         writeResult(history, Path.of(DEFAULT_FILE_NAME));
     }
+
     public void writeResult(List<String> history, Path filePath) throws IOException {
         if (history == null) {
             throw new IllegalArgumentException("История игры не может быть null");
